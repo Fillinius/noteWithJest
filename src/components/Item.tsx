@@ -1,9 +1,9 @@
-import { DeleteButton } from "./DeleteButton";
+import { DeleteButton } from './DeleteButton'
 
 type Props = Task & {
-  onDelete: (id: Task["id"]) => void;
-  onToggle: (id: Task["id"]) => void;
-};
+  onDelete: (id: Task['id']) => void
+  onToggle: (id: Task['id']) => void
+}
 
 export const Item = (props: Props) => {
   return (
@@ -14,7 +14,11 @@ export const Item = (props: Props) => {
         defaultChecked={props.done}
         onChange={() => props.onToggle(props.id)}
       />
-      <label htmlFor={props.id} onClick={() => props.onToggle(props.id)}>
+      <label
+        htmlFor={props.id}
+        data-testid="label-field"
+        onClick={() => props.onToggle(props.id)}
+      >
         {props.done ? <s>{props.header}</s> : props.header}
       </label>
       <DeleteButton
@@ -22,5 +26,5 @@ export const Item = (props: Props) => {
         onClick={() => props.onDelete(props.id)}
       />
     </li>
-  );
-};
+  )
+}

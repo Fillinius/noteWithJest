@@ -1,12 +1,14 @@
 import { configureStore } from '@reduxjs/toolkit'
-import taskListReducer from './taskSlice';
-import { loadState, saveState } from 'src/utils/persist';
+import taskListReducer from './taskSlice'
+import searchReducer from './searchSlice'
+import { loadState, saveState } from 'src/utils/persist'
 
-const persistedState = loadState();
+const persistedState = loadState()
 
 export const store = configureStore({
   reducer: {
-    taskList: taskListReducer
+    taskList: taskListReducer,
+    search: searchReducer,
   },
   devTools: true,
   preloadedState: persistedState,
@@ -14,9 +16,9 @@ export const store = configureStore({
 
 store.subscribe(() => {
   saveState({
-    ...store.getState()
-  });
-});
+    ...store.getState(),
+  })
+})
 
-export type RootState = ReturnType<typeof store.getState>;
-export type AppDispatch = typeof store.dispatch;
+export type RootState = ReturnType<typeof store.getState>
+export type AppDispatch = typeof store.dispatch
