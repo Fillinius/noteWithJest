@@ -23,14 +23,14 @@ export const Search = () => {
   }
 
   return (
-    <div className="seach-field-wrapper">
+    <div className="search-field-wrapper">
       <input
         type="text"
         value={search}
         onChange={handleChange}
         placeholder="search"
       />
-      <span data-testid="input-hint-text" className="input-field-hint">
+      <span data-testid="search-hint-text" className="search-field-hint">
         {hintValue}
       </span>
     </div>

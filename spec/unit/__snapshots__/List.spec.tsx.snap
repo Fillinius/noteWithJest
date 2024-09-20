@@ -5,7 +5,7 @@ exports[`отображение списка задач 1`] = `
 - First value
 + Second value
 
-@@ -46,32 +46,7 @@
+@@ -260,33 +260,7 @@
             alt="Удалить"
             src="[object Object]"
           />
@@ -16,14 +16,15 @@ exports[`отображение списка задач 1`] = `
 -     >
 -       <input
 -         checked=""
--         id="3"
+-         id="11"
 -         type="checkbox"
 -       />
 -       <label
--         for="3"
+-         data-testid="label-field"
+-         for="11"
 -       >
 -         <s>
--           выгулять собаку
+-           выгулять cat
 -         </s>
 -       </label>
 -       <button

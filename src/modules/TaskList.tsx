@@ -23,14 +23,14 @@ export const TaskList = () => {
   )
 
   return items.length > 0 ? (
-    <>
+    <div className="list-box">
       <Search />
       <List
         items={search.length === 0 ? items : filterItem}
         onDelete={handleDelete}
         onToggle={handleToggle}
       />
-    </>
+    </div>
   ) : (
     <Empty />
   )
